@@ -3,6 +3,7 @@ package org.example.ebean;
 import java.io.File;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.example.ebean.database.DatabaseSetup;
+import org.example.ebean.listener.PlayerClickListener;
 
 public class BukkitEBeanPlugin extends JavaPlugin {
 
@@ -19,6 +20,7 @@ public class BukkitEBeanPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         DatabaseSetup.load();
+        new PlayerClickListener();
     }
 
     public File getFile(String childFile) {
