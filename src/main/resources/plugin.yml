@@ -1,0 +1,5 @@
+name: BukkitEBeanExample
+version: 1.0
+main: org.example.ebean.BukkitEBeanPlugin
+api-version: 1.19
+authors: [ appleptr16 ]
