@@ -4,6 +4,7 @@ import io.ebean.DatabaseFactory;
 import io.ebean.config.DatabaseConfig;
 import io.ebean.datasource.DataSourceConfig;
 import java.io.File;
+import java.util.Arrays;
 import org.example.ebean.BukkitEBeanPlugin;
 
 public class DatabaseSetup {
@@ -15,6 +16,9 @@ public class DatabaseSetup {
         // We should use the classloader that loaded this plugin
         // because this plugin has our ebean dependencies
         ClassLoader cl = BukkitEBeanPlugin.class.getClassLoader();
+
+        System.out.println(String.join("\n",
+            Arrays.stream(cl.getDefinedPackages()).map(Package::getName).sorted(String.CASE_INSENSITIVE_ORDER).toList()));
 
         DatabaseFactory.createWithContextClassLoader(dbConfig, cl);
         BukkitEBeanPlugin.get().getLogger().info("Successfully created database");

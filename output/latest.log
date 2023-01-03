@@ -1,0 +1,140 @@
+[21:53:43] [ServerMain/INFO]: Building unoptimized datafixer
+[21:53:44] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[21:53:45] [ServerMain/INFO]: Loaded 7 recipes
+[21:53:46] [Server thread/INFO]: Starting minecraft server version 1.19.3
+[21:53:46] [Server thread/INFO]: Loading properties
+[21:53:46] [Server thread/INFO]: This server is running Paper version git-Paper-367 (MC: 1.19.3) (Implementing API version 1.19.3-R0.1-SNAPSHOT) (Git: 51cfcc8)
+[21:53:46] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[21:53:46] [Server thread/INFO]: Using 4 threads for Netty based IO
+[21:53:46] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 6 worker threads, and gen parallelism of 6 threads
+[21:53:47] [Server thread/INFO]: Default game type: SURVIVAL
+[21:53:47] [Server thread/INFO]: Generating keypair
+[21:53:47] [Server thread/INFO]: Starting Minecraft server on *:25565
+[21:53:47] [Server thread/INFO]: Using default channel type
+[21:53:47] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[21:53:47] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[21:53:47] [Server thread/INFO]: [BukkitEBeanExample] Loading BukkitEBeanExample v1.0
+[21:53:47] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[21:53:47] [Server thread/INFO]: Preparing level "world"
+[21:53:48] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[21:53:48] [Server thread/INFO]: Time elapsed: 92 ms
+[21:53:48] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[21:53:48] [Server thread/INFO]: Time elapsed: 24 ms
+[21:53:48] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[21:53:48] [Server thread/INFO]: Time elapsed: 20 ms
+[21:53:48] [Server thread/INFO]: [BukkitEBeanExample] Enabling BukkitEBeanExample v1.0
+[21:53:48] [Server thread/INFO]: [io.avaje.config] Loaded properties from [] 
+[21:53:48] [Server thread/INFO]: [org.example.ebean.io.ebean.datasource] DataSourcePool [db] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200] in[127ms]
+[21:53:49] [Server thread/INFO]: [org.example.ebean.io.ebean.DDL] Executing db-drop-all.sql - 1 statements, autoCommit:true
+[21:53:49] [Server thread/INFO]: [org.example.ebean.io.ebean.DDL] Executing db-create-all.sql - 1 statements, autoCommit:false
+[21:53:49] [Server thread/INFO]: [org.example.ebean.io.ebean.core] Started database[db] platform[SQLITE] in 1,129ms
+[21:53:49] [Server thread/INFO]: [BukkitEBeanExample] Successfully created database
+[21:53:49] [Server thread/INFO]: Running delayed init tasks
+[21:53:49] [Server thread/INFO]: Done (2.949s)! For help, type "help"
+[21:53:49] [Server thread/INFO]: Timings Reset
+[21:54:02] [User Authenticator #0/INFO]: UUID of player appleptr16 is fee05d22-06b2-4479-9ca5-6fd4db985227
+[21:54:02] [Server thread/INFO]: appleptr16 joined the game
+[21:54:02] [Server thread/INFO]: appleptr16[/127.0.0.1:50159] logged in with entity id 257 at ([world]-156.35842892298155, 67.0, -108.35016035819511)
+[21:54:06] [Server thread/INFO]: [BukkitEBeanExample] Saving now! - appleptr16 performed LEFT_CLICK_AIR at Jan 3, 2023, 2:54:06 AM
+[21:54:06] [Server thread/INFO]: [BukkitEBeanExample] Successfully saved click! - appleptr16 performed LEFT_CLICK_AIR at Jan 3, 2023, 2:54:06 AM
+[21:54:06] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to BukkitEBeanExample v1.0
+java.lang.ExceptionInInitializerError: null
+	at org.example.ebean.io.ebean.ProfileLocation.create(ProfileLocation.java:16) ~[BukkitEBeanExample-1.0-SNAPSHOT-all.jar:?]
+	at org.example.ebean.database.FindByQueryBean._$initProfileLocations(FindByQueryBean.java:1) ~[BukkitEBeanExample-1.0-SNAPSHOT-all.jar:?]
+	at org.example.ebean.database.FindByQueryBean.<clinit>(FindByQueryBean.java:4) ~[BukkitEBeanExample-1.0-SNAPSHOT-all.jar:?]
+	at org.example.ebean.listener.PlayerClickListener.onPlayerClick(PlayerClickListener.java:27) ~[BukkitEBeanExample-1.0-SNAPSHOT-all.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor1.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.19.3-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:80) ~[paper-api-1.19.3-R0.1-SNAPSHOT.jar:git-Paper-367]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.19.3-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:672) ~[paper-api-1.19.3-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_19_R2.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:546) ~[paper-1.19.3.jar:git-Paper-367]
+	at org.bukkit.craftbukkit.v1_19_R2.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:503) ~[paper-1.19.3.jar:git-Paper-367]
+	at org.bukkit.craftbukkit.v1_19_R2.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:498) ~[paper-1.19.3.jar:git-Paper-367]
+	at org.bukkit.craftbukkit.v1_19_R2.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:493) ~[paper-1.19.3.jar:git-Paper-367]
+	at org.bukkit.craftbukkit.v1_19_R2.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:489) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleAnimate(ServerGamePacketListenerImpl.java:2606) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.handle(ServerboundSwingPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.a(ServerboundSwingPacket.java:11) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$1(PacketUtils.java:51) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:153) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1341) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:197) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:126) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1318) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1311) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:136) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1289) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1177) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:316) ~[paper-1.19.3.jar:git-Paper-367]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+Caused by: java.lang.IllegalStateException: No service implementation found for interface org.example.ebean.io.ebean.service.SpiRawSqlService
+	at org.example.ebean.io.ebean.XServiceProvider.loadFirstService(XServiceProvider.java:39) ~[BukkitEBeanExample-1.0-SNAPSHOT-all.jar:?]
+	at org.example.ebean.io.ebean.XServiceProvider.initRawSql(XServiceProvider.java:27) ~[BukkitEBeanExample-1.0-SNAPSHOT-all.jar:?]
+	at org.example.ebean.io.ebean.XServiceProvider.<clinit>(XServiceProvider.java:16) ~[BukkitEBeanExample-1.0-SNAPSHOT-all.jar:?]
+	... 31 more
+[21:54:06] [Server thread/INFO]: [BukkitEBeanExample] Saving now! - appleptr16 performed LEFT_CLICK_AIR at Jan 3, 2023, 2:54:06 AM
+[21:54:06] [Server thread/INFO]: [BukkitEBeanExample] Successfully saved click! - appleptr16 performed LEFT_CLICK_AIR at Jan 3, 2023, 2:54:06 AM
+[21:54:06] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to BukkitEBeanExample v1.0
+java.lang.NoClassDefFoundError: Could not initialize class org.example.ebean.database.FindByQueryBean
+	at org.example.ebean.listener.PlayerClickListener.onPlayerClick(PlayerClickListener.java:27) ~[BukkitEBeanExample-1.0-SNAPSHOT-all.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor1.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.19.3-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:80) ~[paper-api-1.19.3-R0.1-SNAPSHOT.jar:git-Paper-367]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.19.3-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:672) ~[paper-api-1.19.3-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_19_R2.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:546) ~[paper-1.19.3.jar:git-Paper-367]
+	at org.bukkit.craftbukkit.v1_19_R2.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:503) ~[paper-1.19.3.jar:git-Paper-367]
+	at org.bukkit.craftbukkit.v1_19_R2.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:498) ~[paper-1.19.3.jar:git-Paper-367]
+	at org.bukkit.craftbukkit.v1_19_R2.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:493) ~[paper-1.19.3.jar:git-Paper-367]
+	at org.bukkit.craftbukkit.v1_19_R2.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:489) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleAnimate(ServerGamePacketListenerImpl.java:2606) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.handle(ServerboundSwingPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.a(ServerboundSwingPacket.java:11) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$1(PacketUtils.java:51) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:153) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1341) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:197) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:126) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1318) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1311) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:136) ~[?:?]
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:1389) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1173) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:316) ~[paper-1.19.3.jar:git-Paper-367]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.ExceptionInInitializerError [in thread "Server thread"]
+	at org.example.ebean.io.ebean.ProfileLocation.create(ProfileLocation.java:16) ~[BukkitEBeanExample-1.0-SNAPSHOT-all.jar:?]
+	at org.example.ebean.database.FindByQueryBean._$initProfileLocations(FindByQueryBean.java:1) ~[BukkitEBeanExample-1.0-SNAPSHOT-all.jar:?]
+	at org.example.ebean.database.FindByQueryBean.<clinit>(FindByQueryBean.java:4) ~[BukkitEBeanExample-1.0-SNAPSHOT-all.jar:?]
+	at org.example.ebean.listener.PlayerClickListener.onPlayerClick(PlayerClickListener.java:27) ~[BukkitEBeanExample-1.0-SNAPSHOT-all.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor1.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.19.3-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:80) ~[paper-api-1.19.3-R0.1-SNAPSHOT.jar:git-Paper-367]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.19.3-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:672) ~[paper-api-1.19.3-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_19_R2.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:546) ~[paper-1.19.3.jar:git-Paper-367]
+	at org.bukkit.craftbukkit.v1_19_R2.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:503) ~[paper-1.19.3.jar:git-Paper-367]
+	at org.bukkit.craftbukkit.v1_19_R2.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:498) ~[paper-1.19.3.jar:git-Paper-367]
+	at org.bukkit.craftbukkit.v1_19_R2.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:493) ~[paper-1.19.3.jar:git-Paper-367]
+	at org.bukkit.craftbukkit.v1_19_R2.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:489) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleAnimate(ServerGamePacketListenerImpl.java:2606) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.handle(ServerboundSwingPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.a(ServerboundSwingPacket.java:11) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$1(PacketUtils.java:51) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:153) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1341) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:197) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:126) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1318) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1311) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:136) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1289) ~[paper-1.19.3.jar:git-Paper-367]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1177) ~[paper-1.19.3.jar:git-Paper-367]
+	... 2 more
