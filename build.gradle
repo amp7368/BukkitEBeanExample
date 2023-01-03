@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "io.ebean" version "13.10.0"
     id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
@@ -13,11 +14,33 @@ repositories {
     }
 }
 
+project.ext.ebean_version = '13.11.0'
+// https://search.maven.org/search?q=g:io.ebean
 dependencies {
+    // sql annotation processor
+    annotationProcessor "io.ebean:ebean-querybean:${ebean_version}"
+    annotationProcessor "io.ebean:querybean-generator:${ebean_version}"
+
+    // sqlite connection driver
+    implementation 'org.xerial:sqlite-jdbc:3.40.0.0'
+
+    // sql ORM
+    implementation "io.ebean:ebean-jackson-mapper:${ebean_version}"
+    implementation "io.ebean:ebean-ddl-generator:${ebean_version}"
+    implementation "io.ebean:ebean-querybean:${ebean_version}"
+    implementation "io.ebean:ebean-sqlite:${ebean_version}"
+
+    // minecraft api
     compileOnly 'org.spigotmc:spigot-api:1.19.3-R0.1-SNAPSHOT'
 }
 
 shadowJar {
+    mergeServiceFiles()
+
+    relocate 'io.ebean', 'org.example.ebean.io.ebean'
+    relocate 'io.ebeaninternal', 'org.example.ebean.io.ebeaninternal'
+    relocate 'io.ebeanservice', 'org.example.ebean.io.ebeanservice'
+
     doLast {
         copy {
             from shadowJar.getArchiveFile()
