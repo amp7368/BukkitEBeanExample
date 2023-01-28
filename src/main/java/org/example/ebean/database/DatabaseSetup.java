@@ -4,7 +4,6 @@ import io.ebean.DatabaseFactory;
 import io.ebean.config.DatabaseConfig;
 import io.ebean.datasource.DataSourceConfig;
 import java.io.File;
-import java.util.Arrays;
 import org.example.ebean.BukkitEBeanPlugin;
 
 public class DatabaseSetup {
@@ -15,14 +14,26 @@ public class DatabaseSetup {
 
         // We should use the classloader that loaded this plugin
         // because this plugin has our ebean dependencies
-        ClassLoader cl = BukkitEBeanPlugin.class.getClassLoader();
+        ClassLoader originalClassLoader = Thread.currentThread().getContextClassLoader();
+        ClassLoader pluginClassLoader = BukkitEBeanPlugin.class.getClassLoader();
 
-        System.out.println(String.join("\n",
-            Arrays.stream(cl.getDefinedPackages()).map(Package::getName).sorted(String.CASE_INSENSITIVE_ORDER).toList()));
+        // create the DatabaseFactory with the classloader containing ebean dependencies
+        DatabaseFactory.createWithContextClassLoader(dbConfig, pluginClassLoader);
 
-        DatabaseFactory.createWithContextClassLoader(dbConfig, cl);
+        // Set the current thread's contextClassLoader to the classLoader with the ebean dependencies
+        // This allows the class to initialize itself with access to the required class dependencies
+        Thread.currentThread().setContextClassLoader(pluginClassLoader);
+
+        // invoke the static initialization of every class that contains a querybean.
+        // Note that any method in the class will initialize the class.
+        FindByQueryBean.init();
+
+        // Restore the contextClassLoader to what it was originally
+        Thread.currentThread().setContextClassLoader(originalClassLoader);
+
         BukkitEBeanPlugin.get().getLogger().info("Successfully created database");
     }
+
 
     private static DatabaseConfig configureDatabase(DataSourceConfig dataSourceConfig) {
         DatabaseConfig dbConfig = new DatabaseConfig();

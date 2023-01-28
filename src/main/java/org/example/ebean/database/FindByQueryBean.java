@@ -8,4 +8,6 @@ public class FindByQueryBean {
         return new QDPlayerClick().where().playerName.eq(playerName).orderBy().timestamp.desc().setMaxRows(1).findOne();
     }
 
+    public static void init() {
+    }
 }
